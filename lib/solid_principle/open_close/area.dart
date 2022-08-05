@@ -60,8 +60,6 @@ class AreaCalculator {
 }
 
 
-
-
 void main() {
   ShapeInterface circle = Circle(radius: 1);
   ShapeInterface square = Square(length: 2);
