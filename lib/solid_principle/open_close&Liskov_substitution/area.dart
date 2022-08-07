@@ -3,6 +3,11 @@
 // # Open-closed Principle
 // Objects or entities should be open for extension, but closed for modification.
 
+
+// # Liskov substitution principle
+// Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for objects y of type S where S is a subtype of T.
+// All this is stating is that every subclass/derived class should be substitutable for their base/parent class
+
 import 'dart:math';
 
 abstract class ShapeInterface {
@@ -53,7 +58,7 @@ class Rectangle implements ShapeInterface {
 }
 
 class AreaCalculator {
-  ShapeInterface? shape;
+  
   calculateArea(shape) {
     return shape.area();
   }
@@ -61,8 +66,8 @@ class AreaCalculator {
 
 
 void main() {
-  ShapeInterface circle = Circle(radius: 1);
-  ShapeInterface square = Square(length: 2);
+  ShapeInterface circle = Circle(radius: 1);       // Liskov substitution
+  ShapeInterface square = Square(length: 2);       // Liskov substitution
   AreaCalculator area = AreaCalculator();
   print(area.calculateArea(circle));
   print(area.calculateArea(square));
